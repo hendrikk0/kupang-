@@ -850,3 +850,262 @@ button:active {
     }
 }
 ```
+```css
+/* ==============================
+   19. RESPONSIVE UNTUK TABLET DAN HP
+============================== */
+
+/* Mencegah elemen melebar keluar layar */
+html {
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+/* Memastikan gambar menyesuaikan layar */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mencegah teks panjang merusak layout */
+p,
+h1,
+h2,
+.card,
+.data-identitas,
+td,
+th,
+label {
+    overflow-wrap: anywhere;
+}
+
+/* Tablet dan HP */
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 5px auto;
+        padding: 18px;
+        border-width: 1px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: clamp(22px, 5vw, 28px);
+        line-height: 1.3;
+        margin-top: 10px;
+        margin-bottom: 18px;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 1.4;
+        margin-top: 22px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Foto profil */
+    .foto-profil {
+        width: 150px;
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+
+    /* Kolom identitas */
+    .identitas,
+    .kolom-foto,
+    .kolom-identitas {
+        padding-right: 0;
+    }
+
+    .data-identitas {
+        padding: 5px 2px;
+        line-height: 1.7;
+    }
+
+    /* Tabel identitas yang menggunakan tabel HTML */
+    table:not(.table-matakuliah) {
+        max-width: 100%;
+    }
+
+    /* Grid informasi menjadi satu kolom */
+    .grid-informasi {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+
+    .card {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    /* Tabel mata kuliah dapat digeser ke samping */
+    .table-matakuliah {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-matakuliah th,
+    .table-matakuliah td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    /* Form */
+    form {
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+        margin-top: 18px;
+        border-radius: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    textarea {
+        min-height: 110px;
+    }
+
+    /* Tombol lebih mudah ditekan dengan jari */
+    button {
+        max-width: 100%;
+        min-height: 44px;
+        padding: 12px 18px;
+        margin: 8px 6px 5px 0;
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    .footer {
+        margin-top: 24px;
+        padding-top: 16px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* Hover tidak diperlukan pada layar sentuh */
+    h2:hover,
+    p:hover,
+    .data-identitas:hover,
+    .foto-profil:hover,
+    .card:hover,
+    button:hover {
+        /* Efek hover tetap aman pada layar kecil */
+    }
+}
+
+/* ==============================
+   20. KHUSUS HP KECIL
+============================== */
+
+@media screen and (max-width: 480px) {
+
+    body {
+        padding: 7px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 13px;
+        border-radius: 13px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .foto-profil {
+        width: 125px;
+    }
+
+    .card {
+        padding: 13px;
+        border-left-width: 5px;
+        border-bottom-width: 4px;
+    }
+
+    form {
+        padding: 12px;
+    }
+
+    .table-matakuliah th,
+    .table-matakuliah td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        margin: 7px 0 3px;
+        padding: 12px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
+
+/* ==============================
+   21. MENGURANGI ANIMASI
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+```
